@@ -1,5 +1,3 @@
-import Query from './query';
-
 class Query {
     constructor() {
         //raczej nic nie bedzie trzeba tu pisać
