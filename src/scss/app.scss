@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/bootstrap";
+
+#topbar{
+    height: 10vh;
+    text-align: center;
+}
+#root{
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.taskGroup{
+    min-width: 40%;
+    height: 50%;
+    :hover{
+        cursor: pointer;
+    }
+}
