@@ -15,10 +15,16 @@
     <form action = "/todos" method="post">
     <input type = "text" name = "description">
 <button type = "submit">Dodaj</button>
-
+<ul>
+{{#todos}}
+<li><form action="/todos/{{_id}}/completed" method="post">
+{{description}} - {{done}} 
+<button type="submit">Zrobione</button></form></li>
+{{/todos}}
+</ul>
     <div id="root"></div>
 
-    <script src="./bundle.js"></script>
+    <script src="../bundle.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,18 @@
+
 const express = require('express');
 const mustacheExpress = require ('mustache-express');
 const bodyParser = require ('body-parser');
 const mongoose = require ('mongoose');
 const routes = require ('./routes/routes');
 const app = express();
+mongoose.Promise = global.Promise;
+
+mongoose.connect ('mongodb://localhost:27017/todoapp', {
+    useNewUrlParser: true
+}).then (function(){
+    console.log ('yasss bisz');
+});
+
 app.use(bodyParser.urlencoded({extended:true}));
 const mustacheExpressInstance = mustacheExpress();
 mustacheExpressInstance.cache=null;
@@ -14,4 +23,4 @@ app.use ('/', routes);
 app.listen (3000, function(){
     console.log ('listening bitch');
 
-})
+});
