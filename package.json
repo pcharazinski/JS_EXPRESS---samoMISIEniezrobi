@@ -1,0 +1,27 @@
+{
+  "name": "cc.samomisieniezrobi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptainObjective/cc.samoMISIEniezrobi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainObjective/cc.samoMISIEniezrobi/issues"
+  },
+  "homepage": "https://github.com/CaptainObjective/cc.samoMISIEniezrobi#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  }
+}
