@@ -1,26 +1,27 @@
-
 const express = require('express');
-const mustacheExpress = require ('mustache-express');
-const bodyParser = require ('body-parser');
-const mongoose = require ('mongoose');
-const routes = require ('./routes/routes');
+const mustacheExpress = require('mustache-express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const routes = require('./routes/routes');
 const app = express();
 mongoose.Promise = global.Promise;
 
-mongoose.connect ('mongodb://localhost:27017/todoapp', {
+mongoose.connect('mongodb://localhost:27017/todoapp', {
     useNewUrlParser: true
-}).then (function(){
-    console.log ('yasss bisz');
+}).then(function () {
+    console.log('yasss bisz');
 });
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 const mustacheExpressInstance = mustacheExpress();
-mustacheExpressInstance.cache=null;
+mustacheExpressInstance.cache = null;
 app.engine('mustache', mustacheExpressInstance);
 app.set('view engine', 'mustache');
-app.set ('views', __dirname + '/views');
-app.use ('/', routes);
-app.listen (3000, function(){
-    console.log ('listening bitch');
+app.set('views', __dirname + '/views');
+app.use('/', routes);
+app.listen(3000, function () {
+    console.log('listening bitch');
 
 });

@@ -1,4 +1,5 @@
-,<!DOCTYPE html>
+,
+<!DOCTYPE html>
 <html lang="pl">
 
 <head>
@@ -12,19 +13,31 @@
     <div id="topbar">
         <h1>samoMISIEniezrobi mustasz</h1>
     </div>
-    <form action = "/todos" method="post">
-    <input type = "text" name = "description">
-<button type = "submit">Dodaj</button>
-<ul>
-{{#todos}}
-<li><form action="/todos/{{_id}}/completed" method="post">
-{{description}} - {{done}} 
-<button type="submit">Zrobione</button></form></li>
-{{/todos}}
-</ul>
-    <div id="root"></div>
+    <form action="/todos" method="post">
+        <input type="text" name="description">
+        <button type="submit">Dodaj</button>
+        <ul>
+            {{#todos}}
+            <li>
+                <form action="/todos/{{_id}}/completed" method="post">
+                    {{description}} - {{done}}
+                    <button type="submit">Zrobione</button></form>
+            </li>
+            {{/todos}}
+        </ul>
+        <h3>Zrobione</h3>
+        <ul>
+        {{#doneTodos}}
+        <li>
+                <form action="/todos/{{_id}}/completed" method="post">
+                    {{description}} - {{done}}
+                    <button type="submit">Zrobione</button></form>
+            </li>
+        {{/doneTodos}}
+        </ul>
+        <div id="root"></div>
 
-    <script src="../bundle.js"></script>
+        <script src="../bundle.js"></script>
 </body>
 
 </html>
