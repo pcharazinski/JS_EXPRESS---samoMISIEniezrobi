@@ -32,9 +32,10 @@ block content
                              th(scope='row')= todo.id
                              td= todo.title
                              td 
-                                button.btn.btn-info.btn-sm 
+                                a(href="/editme/"+ todo.id).btn.btn-info.btn-sm 
                                     i.fas.fa-pencil-alt
                              td
-                                button.btn.btn-danger.btn-sm 
-                                    i.fas.fa-trash-alt
+                                form(method="post", action="/deleteme/" + todo.id + "?_method=delete")
+                                    button(type="submit").btn.btn-danger.btn-sm 
+                                         i.fas.fa-trash-alt
                     

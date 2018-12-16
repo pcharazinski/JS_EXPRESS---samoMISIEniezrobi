@@ -20,7 +20,17 @@ const postIndex = (req,res) =>{
     })
     
 }
+
+const deleteIndex = (req, res)=>{
+    const {id} = req.params;
+    Todo.findByIdAndDelete(id, (err)=> {
+        if (err) console.log(err);
+        res.redirect ('/');
+    });
+
+}
 module.exports = {
     getIndex:getIndex,
-    postIndex:postIndex
+    postIndex:postIndex,
+    deleteIndex:deleteIndex
 }
