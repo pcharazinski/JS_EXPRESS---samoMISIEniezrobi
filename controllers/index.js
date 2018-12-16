@@ -1,7 +1,14 @@
 const Todo = require ('../models/Todo');
 const getIndex = (req, res) => 
 {
-    res.render ('index')
+    Todo.find({},(err, todos)=> {
+        if (err) console.log(err);        
+        console.log(todos);
+        res.render ('index', {
+            todos:todos
+        })
+    })
+    
 };
 const postIndex = (req,res) =>{
     const newTodo = new Todo({
