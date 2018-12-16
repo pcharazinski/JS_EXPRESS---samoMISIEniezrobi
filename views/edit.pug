@@ -1,0 +1,14 @@
+extends layout
+block content
+    .row
+        .col-md-4
+            .card
+                .card-header
+                    h3 Edytuj zadanie 
+                .card-body
+                    form(method="POST", action="/editme/"+todo.id+ "?_method=put" )
+                        .form-group
+                            label(for='labeltodo') Wprowadź nową treść:
+                            input.form-control#labeltodo(type='text', value = todo.title name="title")
+                        button(type="submit").btn.btn-primary.btn-block
+                            i.fas.fa-pencil-alt.pl-1 
