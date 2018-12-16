@@ -22,14 +22,14 @@ block content
             table.table.table-striped
                 thead
                     tr
-                    
+                    th(scope='col') ID
                     th(scope='col') Zadanie
                     th(scope='col') Edytuj
                     th(scope='col') Usuń
                 tbody
                     each todo in todos
                         tr
-                             
+                             th(scope='row')= todo.id
                              td= todo.title
                              td 
                                 a(href="/editme/"+ todo.id).btn.btn-info.btn-sm 
