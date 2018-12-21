@@ -2,7 +2,7 @@ const express = require ("express");
 const mongoose = require ('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require ('method-override');
-mongoose.connect ('mongodb://admin:admin62D.@ds121652.mlab.com:21652/samomisieniezrobi', { useNewUrlParser: true }).then (() => {
+mongoose.connect ('mongodb://admin:admin62D.@ds121652.mlab.com:21652/samosieniezrobi_pawel', { useNewUrlParser: true }).then (() => {
 console.log('ejj... chyba polaczylam sie z baza danych, lol');
 
 });
